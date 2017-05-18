@@ -32,6 +32,9 @@ class Tire extends Model
 
     public static function getBySeason($season)
     {
+        if (!isset($season) || false === $season) {
+            return abort(404);
+        }
         return DB::table('tires')->where('season', $season)->paginate(15);
     }
 }

@@ -19,12 +19,20 @@ class TireController extends Controller
 
     public function showBySeason($slug)
     {
-        if ('winter' === $slug) {
-            return view('tires.season', ['tires' => Tire::getBySeason('Зима')]);
-        } elseif ('summer' === $slug) {
-            return view('tires.season', ['tires' => Tire::getBySeason('Лето')]);
-        } elseif ('all-weather' === $slug) {
-            return view('tires.season', ['tires' => Tire::getBySeason('Всесезонная')]);
+        $season = false;
+
+        switch ($slug) {
+            case 'winter':
+                $season = 'Зима';
+                break;
+            case 'summer':
+                $season = 'Лето';
+                break;
+            case 'all-weather':
+                $season = 'Всесезонная';
+                break;
         }
+
+        return view('tires.season', ['tires' => Tire::getBySeason($season)]);
     }
 }
