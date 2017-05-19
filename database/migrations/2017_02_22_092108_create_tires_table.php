@@ -18,7 +18,7 @@ class CreateTiresTable extends Migration
             $table->string('slug')->unique();
             $table->string('standardSize', 100);
             $table->string('dia', 3);
-            $table->enum('season', ['Зима', 'Лето', 'Всесезонная']);
+            $table->enum('season', ['winter', 'summer', 'all-weather']);
             $table->string('brand', 100);
             $table->string('model', 200);
             $table->integer('amount')->nullable();

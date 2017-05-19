@@ -23,13 +23,13 @@ class TireController extends Controller
 
         switch ($slug) {
             case 'winter':
-                $season = 'Зима';
+                $season = 'winter';
                 break;
             case 'summer':
-                $season = 'Лето';
+                $season = 'summer';
                 break;
             case 'all-weather':
-                $season = 'Всесезонная';
+                $season = 'all-weather';
                 break;
         }
 
